@@ -69,7 +69,7 @@ function resolvePromise(promise, result, resolve, reject) {
     resolve(result)
 }
 
-function SimplePromise(fn) {
+function SimplePromise(executor) {
     this.result = null
     this.state = PENDING
     this.callbacks = []
@@ -90,7 +90,7 @@ function SimplePromise(fn) {
     }
 
     try {
-        fn(resolve, reject)
+        executor(resolve, reject)
     } catch (error) {
         reject(error)
     }

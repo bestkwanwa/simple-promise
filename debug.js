@@ -131,7 +131,9 @@ let thenableObj = {
  * 0
  */
 let p = new SimplePromise((resolve, reject) => {
+    console.log('first promise');
     setTimeout(() => {
+        console.log('first promise resolve');
         resolve('resolve')
     });
 })
@@ -140,6 +142,7 @@ let p = new SimplePromise((resolve, reject) => {
  * 1
  */
 let np = new SimplePromise((_, rej) => {
+    console.log('second promise');
     rej('np fail')
 })
 // let nnp=new SimplePromise((res,rej)=>{
@@ -157,9 +160,10 @@ p.then(msg => {
     return np   // 4
 }).then(res => {            // 3
     console.log('sec resolve', res, count);
-
+    return 'done'
 }, err => {
     console.log('sec rej', err, count);
+    return 'done'
 })
 // let np = p.then((res) => {
 //     console.log('first then', res);
