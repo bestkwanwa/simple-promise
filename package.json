@@ -1,0 +1,19 @@
+{
+  "name": "simple-promise",
+  "version": "1.0.0",
+  "description": "🍰 A simple implementation of Promises.",
+  "main": "index.js",
+  "scripts": {
+    "test": "promises-aplus-tests adapter"
+  },
+  "keywords": [
+    "Promises",
+    "Promises/A+",
+    "implementation"
+  ],
+  "author": "Bestkwanwa",
+  "license": "ISC",
+  "dependencies": {
+    "promises-aplus-tests": "^2.1.2"
+  }
+}
