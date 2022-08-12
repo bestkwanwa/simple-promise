@@ -10,6 +10,16 @@ pnpm run test
 ## Promises/A+
 [Promises/A+](https://promisesaplus.com/)
 
+### states
+- promise的状态一旦凝固，不再改变
+  ```js
+  let p = new Promise((resolve, reject) => {
+    resolve('success1')
+    reject('error') // 无效
+    resolve('success2') // 无效
+  })
+  ```
+
 ### then方法
 - then方法可以被调用多次
     ```js
